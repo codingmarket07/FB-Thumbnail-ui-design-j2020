@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Facebook Thumbnail UI Design</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".fd_like").click(function() {
+			  $(".fb_footer").toggleClass("active");
+
+			  if ($(".fb_footer").hasClass("active")) {
+			    $(".fi_like .info").text("You and 2.5k others");
+			  } else {
+			    $(".fi_like .info").text("2.5k");
+			  }
+			});
+
+			$(".fd_share").click(function() {
+			  $(this)
+			    .parents(".fb_thumbnail")
+			    .toggleClass("share_active");
+			  $(".fb_thumbnail").removeClass("menu_active");
+			  $(".fb_thumbnail").removeClass("profile_active");
+			});
+
+			$(".header_menu").click(function() {
+			  $(this)
+			    .parents(".fb_thumbnail")
+			    .toggleClass("menu_active");
+			  $(".fb_thumbnail").removeClass("share_active");
+			  $(".fb_thumbnail").removeClass("profile_active");
+			});
+
+			$(".fi_profile").click(function() {
+			  $(this)
+			    .parents(".fb_thumbnail")
+			    .toggleClass("profile_active");
+			  $(".fb_thumbnail").removeClass("share_active");
+			  $(".fb_thumbnail").removeClass("menu_active");
+			});
+
+		});
+	</script>
+</head>
+<body>
+
+<div class="fb_wrapper">
+  <div class="fb_thumbnail">
+    <div class="fb_thumbnail_inner">
+      <div class="fb_header">
+        <div class="fb_left">
+          <div class="header_pro">
+            <img src="pro_round_img.png" alt="profile_img">
+          </div>
+          <div class="header_info">
+            <div class="name">Johnson Alexander</div>
+            <div class="login_data">
+              <div class="time">3 hrs</div>
+              <div class="device">Facebook for Android</div>
+              <div class="globe_icon"></div>
+            </div>
+          </div>
+        </div>
+        <div class="header_menu">
+        </div>
+      </div>
+      <div class="fb_body">
+        <div class="thumb_content">
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="thumb_img">
+          <img src="thumbnail.jpg" alt="thumbnail">
+        </div>
+      </div>
+      <div class="fb_footer">
+        <div class="footer_info">
+          <div class="fi_like">
+            <div class="icon_grp">
+              <div class="like"></div>
+              <div class="heart"></div>
+              <div class="wow"></div>
+            </div>
+            <div class="info">2.5k</div>
+          </div>
+          <div class="fi_grp">
+            <div class="fi_comment">
+              <div class="info"><span>62</span> comments</div>
+            </div>
+            <div class="fi_share">
+              <div class="info"><span>42</span> shares</div>
+            </div>
+            <div class="fi_profile">
+              <div class="pro_img">
+                <img src="pro_square_img.png" alt="profile_img">
+              </div>
+              <div class="arrow"></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer_data">
+          <div class="fd_like">
+            <div class="icon"></div>
+            <div class="data">Like</div>
+          </div>
+          <div class="fd_comment">
+            <div class="icon"></div>
+            <div class="data">Comment</div>
+          </div>
+          <div class="fd_share">
+            <div class="icon">
+            </div>
+            <div class="data">Share</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fb_popups">
+      <div class="share_popup">
+        <ul>
+          <li><span class="icon"></span>Share Now</li>
+          <li>Write Post</li>
+          <li>Send in WhatsApp</li>
+          <li>Send as Message</li>
+          <li>Share to a page</li>
+        </ul>
+      </div>
+      <div class="menu_popup">
+        <ul>
+          <li>
+            <div class="menu_item report_post">
+              <div class="icon"></div>
+              <div class="menu_info">
+                <p class="title">Find support or report post</p>
+                <p>I'm concerned about this post</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="menu_item save_post">
+              <div class="icon"></div>
+              <div class="menu_info">
+                <p class="title">Save post</p>
+                <p>Add this to your saved items</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="menu_item hide_post">
+              <div class="icon"></div>
+              <div class="menu_info">
+                <p class="title">Hide post</p>
+                <p>See fewer posts like this</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="menu_item snooze">
+              <div class="icon"></div>
+              <div class="menu_info">
+                <p class="title">Snooze Johnson Alexander for 30 days</p>
+                <p>Temporarily stop seeing posts</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="menu_item unfollow">
+              <div class="icon"></div>
+              <div class="menu_info">
+                <p class="title">Unfollow Johnson Alexander</p>
+                <p>Stop seeing posts from this page</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="menu_item turn_on">
+              <div class="icon"></div>
+              <div class="menu_info">
+                <p class="title">Turn on notifications for this post</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="profile_popup">
+        <ul>
+          <li>Linking and commenting as:</li>
+          <li>
+            <div class="icon"></div>
+            <div class="pro_name">Johnson Alexander</div>
+          </li>
+          <li>
+            <div class="icon"></div>
+            <div class="pro_name">Life is not a race</div>
+          </li>
+          <li>
+            <div class="icon"></div>
+            <div class="pro_name">Never give up</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+	
+</body>
+</html>
